@@ -46,7 +46,7 @@ FG_PURPLE="$(tput setaf ${TPUT_MAGENTA})"  # AKA Magenta
 FG_MAGENTA="$(tput setaf ${TPUT_MAGENTA})"
 FG_CYAN="$(tput setaf ${TPUT_CYAN})"
 FG_WHITE="$(tput setaf ${TPUT_WHITE})"
-FG_GRAY=${BOLD}${FG_BLACK}
+FG_GRAY=${TEXT_BOLD}${FG_BLACK}
 
 # Background colors
 BG_BLACK="$(tput setab ${TPUT_BLACK})"
