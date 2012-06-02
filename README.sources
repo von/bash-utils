@@ -1,0 +1,7 @@
+git-completion.bash
+	This is from the git distribution:
+	git clone git://git.kernel.org/pub/scm/git/git.git
+    	git/contrib/completion/git-completion.bash
+
+extract.sh
+	http://tldp.org/LDP/abs/html/sample-bashrc.html
