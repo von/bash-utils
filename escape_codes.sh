@@ -11,13 +11,13 @@
 # http://tldp.org/HOWTO/Bash-Prompt-HOWTO/x405.html
 
 # Attributes
-TEXT_RESET="$(tput sgr0)" 
+TEXT_RESET="$(tput sgr0)"
 TEXT_BOLD="$(tput bold)"  # AKA Bright
 TEXT_DIM="$(tput dim)"  # Seems to be default
 TEXT_UNDERSCORE="$(tput smul)"
 TEXT_UNDERSCORE_END="$(tput rmul)"
 TEXT_BLINK="$(tput blink)" # Doesn't seem to work
-TEXT_REVERSE="$(tput rev)"  
+TEXT_REVERSE="$(tput rev)"
 
 # Seems to be 8 or -1, the latter meaning only B&W are supported
 NUM_COLORS=$(tput colors)
@@ -98,7 +98,7 @@ case $TERM in
 	SET_TAB_TITLE_END="\033\\"
 
 	SET_WINDOW_TITLE_START=${SET_TAB_TITLE_START}
-	SET_WINDOW_TITLE_END=${SET_TAB_TITLE_END}	
+	SET_WINDOW_TITLE_END=${SET_TAB_TITLE_END}
 	;;
     *)
 	# Kudos: http://xanana.ucsc.edu/xtal/iterm_tab_customization.html
