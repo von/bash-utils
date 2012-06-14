@@ -100,12 +100,20 @@ case $TERM in
 	SET_WINDOW_TITLE_START=${SET_TAB_TITLE_START}
 	SET_WINDOW_TITLE_END=${SET_TAB_TITLE_END}
 	;;
-    *)
+    xterm|xterm-color)
 	# Kudos: http://xanana.ucsc.edu/xtal/iterm_tab_customization.html
 	SET_TAB_TITLE_START="\033]1; "
 	SET_TAB_TITLE_END="\007"
 
 	SET_WINDOW_TITLE_START="\033]2; "
 	SET_WINDOW_TITLE_END="\007"
+	;;
+    dumb|ansi|linux|*)
+        # Does not support setting window or tab title
+        SET_TAB_TITLE_START=""
+	SET_TAB_TITLE_END=""
+
+	SET_WINDOW_TITLE_START=""
+	SET_WINDOW_TITLE_END=""
 	;;
 esac
