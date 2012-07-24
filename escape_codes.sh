@@ -46,7 +46,7 @@ FG_PURPLE="$(tput setaf ${TPUT_MAGENTA})"  # AKA Magenta
 FG_MAGENTA="$(tput setaf ${TPUT_MAGENTA})"
 FG_CYAN="$(tput setaf ${TPUT_CYAN})"
 FG_WHITE="$(tput setaf ${TPUT_WHITE})"
-FG_GRAY=${BOLD}${FG_BLACK}
+FG_GRAY=${TEXT_BOLD}${FG_BLACK}
 
 # Background colors
 BG_BLACK="$(tput setab ${TPUT_BLACK})"
@@ -100,12 +100,20 @@ case $TERM in
 	SET_WINDOW_TITLE_START=${SET_TAB_TITLE_START}
 	SET_WINDOW_TITLE_END=${SET_TAB_TITLE_END}
 	;;
-    *)
+    xterm|xterm-color)
 	# Kudos: http://xanana.ucsc.edu/xtal/iterm_tab_customization.html
 	SET_TAB_TITLE_START="\033]1; "
 	SET_TAB_TITLE_END="\007"
 
 	SET_WINDOW_TITLE_START="\033]2; "
 	SET_WINDOW_TITLE_END="\007"
+	;;
+    dumb|ansi|linux|*)
+        # Does not support setting window or tab title
+        SET_TAB_TITLE_START=""
+	SET_TAB_TITLE_END=""
+
+	SET_WINDOW_TITLE_START=""
+	SET_WINDOW_TITLE_END=""
 	;;
 esac
