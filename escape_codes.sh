@@ -92,7 +92,7 @@ function test_escape_codes()
 # See bashrc.title for use
 # Note we don't delineate non-printable here, because these don't go into PS1
 case $TERM in
-    screen)
+    screen|screen-256color)
 	# screen - set title of screen itself
 	SET_TAB_TITLE_START="\033k"
 	SET_TAB_TITLE_END="\033\\"
